@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "api/index.php",
-      "use": "@vercel/php",
+      "use": "@vercel-community/php@0.5.4",
       "config": {
         "phpVersion": "8.2"
       }
