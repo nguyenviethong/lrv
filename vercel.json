@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "framework": null,
   "builds": [
     {
       "src": "api/index.php",
-      "use": "@vercel/php@0.7.1",
+      "use": "@vercel/php",
       "config": {
-        "runtime": "vercel-php@0.7.1"
+        "phpVersion": "8.1"
       }
     }
   ],
@@ -21,12 +20,8 @@
     }
   ],
   "outputDirectory": "public",
-  "functions": {
-    "api/index.php": {
-      "included_files": ["public/**"]
-    }
-  },
   "installCommand": "curl -sS https://getcomposer.org/installer | php && mv composer.phar composer && chmod +x composer && ./composer install --no-dev --prefer-dist",
+  "buildCommand": "php artisan config:cache",
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
