@@ -34,7 +34,7 @@ class FrontendController extends Controller
         // Lấy 8 sản phẩm active, sắp xếp theo updated_at desc
         $products = Product::where('is_active', true)
                     ->orderBy('updated_at', 'desc')
-                    ->take(8)
+                    ->take(12)
                     ->get();
 
         return view('index', compact('categories','heros','about','services','products'));

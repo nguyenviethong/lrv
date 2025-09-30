@@ -375,6 +375,11 @@ return [
             'url' => 'admin/services',
             'icon' => 'fas fa-fw fa-cog',
         ],
+        [
+            'text' => 'QL trang chủ',
+            'url' => 'admin/settingSections',
+            'icon' => 'fas fa-fw fa-list',
+        ],
        
        
         

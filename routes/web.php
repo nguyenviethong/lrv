@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\HeroSectionController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ServiceController ;
+use App\Http\Controllers\Admin\SettingSectionsController ;
 
 Route::get('/', function () {
     return view('welcome');
@@ -82,6 +83,13 @@ Route::prefix('admin')->group(function () {
         Route::get('/services/create', [ServiceController ::class, 'create'])->name('admin.services.create');
         Route::post('/services', [ServiceController ::class, 'store'])->name('admin.services.store');
         Route::delete('/services/{service}', [ServiceController::class, 'destroy'])->name('admin.services.destroy');
+
+        Route::get('/settingSections', [SettingSectionsController ::class, 'index'])->name('admin.settingSections.index');
+        Route::get('/settingSections/{settingSection}/edit', [SettingSectionsController ::class, 'edit'])->name('admin.settingSections.edit');
+        Route::put('/settingSections/{settingSection}', [SettingSectionsController ::class, 'update'])->name('admin.settingSections.update');
+        Route::get('/settingSections/create', [SettingSectionsController ::class, 'create'])->name('admin.settingSections.create');
+        Route::post('/settingSections', [SettingSectionsController ::class, 'store'])->name('admin.settingSections.store');
+        Route::delete('/settingSections/{settingSection}', [SettingSectionsController::class, 'destroy'])->name('admin.settingSections.destroy');
 
     });
 });
